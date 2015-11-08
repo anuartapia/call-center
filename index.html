@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"> 
+		<title>DGAE - UNAM</title>
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+	  <meta name="mobile-web-app-capable" content="yes">
+	  <meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- polymer -->
+		<script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+		<link rel="import" href="bower_components/polymer/polymer.html">
+		<link rel="import" href="index-styles.html">
+		<!-- elements -->
+		<link rel="import" href="bower_components/paper-styles/paper-styles.html">
+		<link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+		<link rel="import" href="bower_components/paper-scroll-header-panel/demo/sample-content.html">
+		<link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+		<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+		<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+		<link rel="import" href="bower_components/paper-tabs/paper-tabs-icons.html">
+		<link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+		<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+		<!-- custom  -->
+		<link rel="import" href="bower_components/cont-main/cont-main.html">
+		<link rel="import" href="bower_components/cont-primer-ingreso/cont-primer-ingreso.html">
+		<link rel="import" href="bower_components/cont-alumnos/cont-alumnos.html">
+		<link rel="import" href="bower_components/social-bar/social-bar.html">
+		<style type="text/css" is="custom-style" include="index-styles"></style>
+	</head>
+	<body>
+		<!-- scrollable header -->
+		<paper-scroll-header-panel condenses>
+			<!-- navbar inside header -->
+	    <paper-toolbar class="tall">
+	    	<!-- title -->
+	      <div class="bottom title">DGAE</div>
+	      <!-- home button -->
+	      <paper-icon-button icon="home">
+	      	<a href="#section-main"></a>
+	      </paper-icon-button>
+	      <!-- navigation tabs -->
+	      <paper-tabs selected="0" class="bottom self-end" style="width: 600px;" link>
+	        <paper-tab><a href="#section-main" class="horizontal center-center layout"><b>Inicio</b></a></paper-tab>
+	        <paper-tab><a href="#section-primer-ingreso" class="horizontal center-center layout"><b>Primer Ingreso</b></a></paper-tab>
+	        <paper-tab><a href="#section-alumnos" class="horizontal center-center layout"><b>Alumnos</b></a></paper-tab>
+	        <paper-tab><a href="#section-egreso" class="horizontal center-center layout"><b>Egreso</b></a></paper-tab>
+	        <paper-tab><a href="#section-academicos-y-administrativos" class="horizontal center-center layout"><b>Académicos</b></a></paper-tab>
+	        <paper-tab><a href="#section-acerca" class="horizontal center-center layout"><b>Acerca</b></a></paper-tab>
+	      </paper-tabs>
+	      <!-- center tabs in header -->
+	      <!--
+	      <div class="bottom flex"></div>
+				-->
+	    </paper-toolbar>
+
+	    <div class="content">
+	      <section id="section-main">
+	      	<cont-main></cont-main>
+	      </section>
+	      <section id="section-primer-ingreso">
+			    <cont-primer-ingreso></cont-primer-ingreso>
+	      </section>
+	      <section id="section-alumnos">
+	      	<cont-alumnos></cont-alumnos>
+	      </section>
+	      <section id="section-egreso">
+	      	<div>Egreso</div>
+			    <sample-content size="1"></sample-content>
+	      </section>
+	      <section id="section-academicos-y-administrativos">
+	      	<div>Académicos y Administrativos</div>
+			    <sample-content size="1"></sample-content>
+	      </section>
+	      <section id="section-acerca">
+	      	<div>Acerca de nosotros</div>
+			    <sample-content size="1"></sample-content>
+	      </section>
+	    </div>
+
+	    <social-bar></social-bar>
+	  </paper-scroll-header-panel>
+	  <script>
+	    // custom transformation: scale header's title
+	    var title = document.querySelector('.title');
+	    addEventListener('paper-header-transform', function(e) {
+	      var d = e.detail;
+	      var m = d.height - d.condensedHeight;
+	      var scale = Math.max(0.75, (m - d.y) / (m / 0.25)  + 0.75);
+
+	      Polymer.Base.transform('scale(' + scale + ') translateZ(0)', title);
+	    });
+	  </script>
+	</body>
+</html>
