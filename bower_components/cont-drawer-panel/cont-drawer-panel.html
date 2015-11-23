@@ -1,0 +1,28 @@
+<dom-module id="cont-drawer-panel">
+  <link rel="import" href="../polymer/polymer.html">
+	<link rel="import" href="cont-drawer-panel-styles.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  <link rel="import" href="../paper-menu/paper-menu.html">
+  <link rel="import" href="../paper-item/paper-item.html">
+	<template>
+		<!-- estilo -->
+		<style type="text/css" is="custom-style" include="cont-drawer-panel-styles"></style>
+    <style>:host { display: block; }</style>
+
+    <paper-menu>
+          <paper-item>Nuevas Peticiones</paper-item>
+          <paper-item>Buscar taxista</paper-item>
+          <paper-item>Historial de Peticiones</paper-item>
+          <paper-item>Configuración</paper-item>
+        </paper-menu>
+   </template>
+
+	<script>
+		Polymer({
+      is: "cont-drawer-panel",
+      ready: function(){
+        console.log("cont-drawer-panel ready!");
+      }
+    });
+	</script>
+</dom-module>
