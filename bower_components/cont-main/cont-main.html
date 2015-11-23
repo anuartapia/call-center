@@ -1,0 +1,29 @@
+<dom-module id="cont-main">
+  <link rel="import" href="../polymer/polymer.html">
+	<template>
+		<!-- estilo -->
+		<link rel="import" href="cont-main-styles.html">
+		<style type="text/css" is="custom-style" include="cont-main-styles"></style>
+    <style>:host { display: block; }</style>
+		<h3>
+			Hola!
+		</h3>
+
+	</template>
+
+	<script>
+		Polymer({
+      is: "cont-main",
+      properties: {
+        // declare properties for the element's public API
+        greeting: {
+          type: String,
+          value: "Hello!"
+        }
+      },
+      ready: function(){
+        console.log("cont-main ready!");
+      }
+    });
+	</script>
+</dom-module>
