@@ -1,33 +1,36 @@
 <dom-module id="cont-main">
   <link rel="import" href="../polymer/polymer.html">
-	<link rel="import" href="cont-main-styles.html">
+  <link rel="import" href="cont-main-styles.html">
   <link rel="import" href="../paper-button/paper-button.html">
   <link rel="import" href="../paper-drawer-panel/paper-drawer-panel.html">
   <link rel="import" href="../cont-drawer-panel/cont-drawer-panel.html">
-	<template>
-		<!-- estilo -->
-		<style type="text/css" is="custom-style" include="cont-main-styles"></style>
-    <style>:host { display: block; }</style>
-
-		<paper-drawer-panel id="pa-dr-pa">
-			<div drawer class="izq">
-				<cont-drawer-panel></cont-drawer-panel>
-			</div>
-			<div main>
-			<div>
-          	<paper-button paper-drawer-toggle raised>Menú</paper-button>
-        	</div>
-		</div>
-		</paper-drawer-panel>
-
-	</template>
-
-	<script>
-		Polymer({
-      is: "cont-main",
-      ready: function(){
-        console.log("cont-main ready!");
-      }
-    });
-	</script>
+  <link rel="import" href="../cont-drawer-main/cont-drawer-main.html">
+  <template>
+    <!-- estilo -->
+    <style type="text/css" is="custom-style" include="cont-main-styles"></style>
+    <style>
+    :host {
+      display: block;
+    }
+    </style>
+    <paper-drawer-panel id="pa-dr-pa">
+      <div drawer class="izq">
+        <cont-drawer-panel></cont-drawer-panel>
+      </div>
+      <div main>
+        <div>
+          <paper-button paper-drawer-toggle raised>Menú</paper-button>
+        </div>
+        <cont-drawer-main></cont-drawer-main>
+      </div>
+    </paper-drawer-panel>
+  </template>
+  <script>
+  Polymer({
+    is: "cont-main",
+    ready: function() {
+      console.log("cont-main ready!");
+    }
+  });
+  </script>
 </dom-module>
