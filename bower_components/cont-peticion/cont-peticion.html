@@ -1,0 +1,36 @@
+<dom-module id="cont-peticion">
+  <link rel="import" href="../polymer/polymer.html">
+  <link rel="import" href="cont-peticion-styles.html">
+  <link rel="import" href="../paper-card/paper-card.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../iron-icons/iron-icons.html">
+  <template>
+    <!-- estilo -->
+    <style type="text/css" is="custom-style" include="cont-peticion-styles"></style>
+    <style>
+    :host {
+      display: block;
+    }
+    </style>
+
+    <paper-card heading="Cards can have titles" class="pink">
+      <div class="card-content">
+        Lorem ipsum dolor sit amet, nec ad conceptam interpretaris, mea ne solet repudiandae. Laudem nostrud ei vim. Sapientem consequuntur usu ad, vel etiam philosophia ex, ad quidam option quo. Sed sale integre pericula ei, rebum adipiscing ius ea.
+      </div>
+      <div class="card-actions">
+        <paper-button>Nay</paper-button>
+        <paper-button>Yay!</paper-button>
+      </div>
+    </paper-card>
+
+  </template>
+  <script>
+  Polymer({
+    is: "cont-peticion",
+    ready: function() {
+      console.log("cont-peticion ready!");
+    }
+  });
+  </script>
+</dom-module>
