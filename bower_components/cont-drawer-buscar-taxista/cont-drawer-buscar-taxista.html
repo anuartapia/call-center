@@ -1,0 +1,38 @@
+<dom-module id="cont-drawer-buscar-taxista">
+  <link rel="import" href="../polymer/polymer.html">
+  <link rel="import" href="cont-drawer-buscar-taxista-styles.html">
+  <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+  <link rel="import" href="../iron-flex-layout/classes/iron-flex-layout.html">
+  <link rel="import" href="../paper-input/all-imports.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  <template>
+    <!-- estilo -->
+    <style type="text/css" is="custom-style" include="cont-drawer-buscar-taxista-styles"></style>
+    <style>
+    :host {
+      display: block;
+    }
+    </style>
+    <div class="contenido">
+      <div class="curp">
+        Por favor introduce el CURP del taxista que quieres buscar
+        <paper-input label="CURP"></paper-input>
+        <paper-button>Buscar</paper-button>
+      </div>
+      <!-- horizontal cards container -->
+      <div class="layout horizontal">
+        <div class="flex">
+          <h3>Hola</h3>
+        </div>
+      </div>
+    </div>
+  </template>
+  <script>
+  Polymer({
+    is: "cont-drawer-buscar-taxista",
+    ready: function() {
+      console.log("cont-drawer-buscar-taxista ready!");
+    }
+  });
+  </script>
+</dom-module>
