@@ -9,6 +9,8 @@
   <link rel="import" href="../cont-drawer-panel/cont-drawer-panel.html">
   <link rel="import" href="../cont-drawer-peticiones/cont-drawer-peticiones.html">
   <link rel="import" href="../cont-drawer-buscar-taxista/cont-drawer-buscar-taxista.html">
+  <link rel="import" href="../paper-menu/paper-menu.html">
+  <link rel="import" href="../paper-item/paper-item.html">
   <template>
     <!-- estilo -->
     <style type="text/css" is="custom-style" include="cont-main-styles"></style>
@@ -32,21 +34,29 @@
     -->
     <paper-drawer-panel>
       <paper-header-panel drawer>
-        <paper-toolbar>
+        <paper-toolbar class="teal">
           <div>Taxi Seguro</div>
         </paper-toolbar>
         <!-- <div> Drawer content... </div> -->
-        <div>
+        <!-- <div>
           <cont-drawer-panel></cont-drawer-panel>
-        </div>
+        </div> -->
+        <paper-menu>
+          <paper-item>Nuevas Peticiones</paper-item>
+          <paper-item>Buscar taxista</paper-item>
+          <paper-item>Historial de Peticiones</paper-item>
+          <paper-item>Configuración</paper-item>
+        </paper-menu>
       </paper-header-panel>
       <paper-header-panel main>
-        <paper-toolbar>
+        <paper-toolbar class="teal">
           <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
           <div>Nuevas peticiones</div>
         </paper-toolbar>
         <!-- <div> Main content... </div> -->
-        <!-- <div><cont-drawer-peticiones></cont-drawer-peticiones></div> -->
+        <div>
+          <cont-drawer-peticiones></cont-drawer-peticiones>
+        </div>
         <div>
           <cont-drawer-buscar-taxista></cont-drawer-buscar-taxista>
         </div>
