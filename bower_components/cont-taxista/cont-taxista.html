@@ -1,0 +1,46 @@
+<dom-module id="cont-taxista">
+  <link rel="import" href="../polymer/polymer.html">
+  <link rel="import" href="cont-taxista-styles.html">
+  <link rel="import" href="../paper-card/paper-card.html">
+  <link rel="import" href="../paper-button/paper-button.html">
+  <link rel="import" href="../paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="../iron-icons/iron-icons.html">
+  <template>
+    <!-- estilo -->
+    <style type="text/css" is="custom-style" include="cont-taxista-styles"></style>
+    <style>
+    :host {
+      display: block;
+    }
+    </style>
+    <!-- horizontal cards container -->
+    <div class="layout horizontal">
+      <div class="flex">
+        <paper-card heading="Ricardo Arjona">
+            <b>Título</b>: The Office of Silicon Valley
+            <br>
+            <b>Calle</b>: 955 Benecia Avenue
+            <br>
+            <b>Colonia</b>: Tepepan
+            <br>
+            <b>Delegación</b>: Xochimilco
+            <br>
+            <b>Teléfono</b>: 55 1143 4964
+          </div>
+          <div class="card-actions">
+            <paper-button class="red">Cancelado</paper-button>
+            <paper-button class="green">Atendido</paper-button>
+          </div>
+      </div>
+    </div>
+    </paper-card>
+  </template>
+  <script>
+  Polymer({
+    is: "cont-taxista",
+    ready: function() {
+      console.log("cont-taxista ready!");
+    }
+  });
+  </script>
+</dom-module>
