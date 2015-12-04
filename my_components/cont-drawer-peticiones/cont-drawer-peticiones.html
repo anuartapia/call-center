@@ -22,8 +22,7 @@
                 <div class="layout horizontal">
                     <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
                         <div class="flex">
-                            <paper-item>{{item.cliente}}</paper-item>
-                            <cont-peticion></cont-peticion>
+                            <cont-peticion cliente="item.cliente" telefono="item.telefono" fecha="item.fecha" imagenMapa="item.imagenMapa" calleOrigen="item.calleOrigen" numeroOrigen="item.numeroOrigen" coloniaOrigen="item.coloniaOrigen" delegacionOrigen="item.delegacionOrigen" calleDestino="item.calleDestino" numeroDestino="item.numeroDestino" coloniaDestino="item.coloniaDestino" delegacionDestino="item.delegacionDestino"></cont-peticion>
                         </div>
                     </template>
                 </div>
@@ -38,10 +37,10 @@
             console.log("cont-drawer-peticiones ready!");
         },
         properties: {
-          peticiones:{
-            type: Array,
-            value: []
-          }
+            peticiones: {
+                type: Array,
+                value: []
+            }
         },
         actualizaPeticiones: function(e) {
             console.log("act");
@@ -52,7 +51,6 @@
         },
         despliegaPeticiones: function(r) {
             console.log(r.detail.response);
-            console.log(r.detail.response.cliente);
             this.peticiones.push(r);
         }
     });
