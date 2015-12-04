@@ -16,7 +16,7 @@ $p = array(
       "cancelada" => false,
       "atendida" => false
       );
-
+/*
 $jsontext = "['peticiones':{";
 foreach($p as $key => $value) {
     $jsontext .= "'".addslashes($key)."': '".addslashes($value)."',";
@@ -24,4 +24,7 @@ foreach($p as $key => $value) {
 $jsontext = substr_replace($jsontext, '', -1); // to get rid of extra comma
 $jsontext .= "}]";
 print_r($jsontext);
+*/
+header('Content-Type: application/json');
+echo json_encode($p);
 ?>

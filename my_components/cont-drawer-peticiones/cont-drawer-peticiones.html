@@ -1,41 +1,68 @@
 <dom-module id="cont-drawer-peticiones">
-  <link rel="import" href="cont-drawer-peticiones-styles.html">
-  <link rel="import" href="../cont-peticion/cont-peticion.html">
-  <template>
-    <!-- estilo -->
-    <style type="text/css" is="custom-style" include="cont-drawer-peticiones-styles"></style>
-    <style>
-    :host {
-      display: block;
-    }
-    </style>
-    <div class="contenido">
-      <paper-icon-button icon="cached" on-tap='actualizaPeticiones'></paper-icon-button>
-      <div id='contenedorPeticiones'>
-        <!-- Mensaje temporal -->
-        <template is='dom-if' if='{{!peticiones.length}}'>
-          <paper-material>
-            <paper-item>Aquí aparecerán las nuevas peticiones</paper-item>
-          </paper-material>
-        </template>
-        <!-- Iterador sobre las peticiones -->
-        <div class="layout horizontal">
-          <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
-            <div class="flex">
-              <paper-item>{{item.cliente}}</paper-item>
-              <cont-peticion></cont-peticion>
+    <link rel="import" href="cont-drawer-peticiones-styles.html">
+    <link rel="import" href="../cont-peticion/cont-peticion.html">
+    <template>
+        <!-- estilo -->
+        <style type="text/css" is="custom-style" include="cont-drawer-peticiones-styles"></style>
+        <style>
+        :host {
+            display: block;
+        }
+        </style>
+        <div class="contenido">
+            <paper-icon-button icon="cached" on-tap='actualizaPeticiones'></paper-icon-button>
+            <div id='contenedorPeticiones'>
+                <!-- Mensaje temporal -->
+                <template is='dom-if' if='{{!peticiones.length}}'>
+                    <paper-material>
+                        <paper-item>Aquí aparecerán las nuevas peticiones</paper-item>
+                    </paper-material>
+                </template>
+                <!-- Iterador sobre las peticiones -->
+                <div class="layout horizontal">
+                    <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
+                        <div class="flex">
+                            <paper-item>{{item.cliente}}</paper-item>
+                            <cont-peticion></cont-peticion>
+                        </div>
+                    </template>
+                </div>
             </div>
-          </template>
         </div>
-      </div>
-    </div>
-  </template>
-  <script>
-  Polymer({
-    is: "cont-drawer-peticiones",
-    ready: function() {
-      console.log("cont-drawer-peticiones ready!");
-    }
-  });
-  </script>
+        <iron-ajax id="ajax" method="POST" url="../../peticiones.php" handle-as="json" on-response="despliegaPeticiones" </iron-ajax>
+    </template>
+    <script>
+    Polymer({
+        is: "cont-drawer-peticiones",
+        ready: function() {
+            console.log("cont-drawer-peticiones ready!");
+        },
+        actualizaPeticiones: function(e) {
+            console.log("act");
+            var datalist = 'nuevas=1';
+            console.log(datalist);
+            this.$.ajax.body = datalist;
+            this.$.ajax.generateRequest();
+        },
+        despliegaPeticiones: function(r){
+          console.log(r.detail.response);
+          console.log(r.detail.response.cliente);
+        },
+        tryLogin: function(e) {
+            var datalist = 'email=' + encodeURIComponent(this.email) +
+                '&password=' + encodeURIComponent(this.password);
+            console.log(datalist);
+            this.$.ajax.body = datalist;
+            this.$.ajax.generateRequest();
+        },
+        loginResponse: function(r) {
+            console.log(r.detail.response);
+            if (r.detail.response.success == 1) {
+                console.log("login exitoso");
+            } else {
+                console.log("login inválido");
+            }
+        }
+    });
+    </script>
 </dom-module>
