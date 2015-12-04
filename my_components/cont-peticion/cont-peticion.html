@@ -87,6 +87,16 @@
         type: String,
         value: ""
       },
+    },
+    cancela: function (argument) {
+      if(argument){
+        this.fire('complete',this);
+      }
+    },
+    atiende: function (argument) {
+      if(argument){
+        this.fire('complete',this);
+      }
     }
   });
   </script>
