@@ -9,22 +9,36 @@
     }
     </style>
     <paper-card heading="Jessica Zaide Jaime Aguilar">
-      <!-- <img src="http://placehold.it/330x150" width="330"> -->
-      <img src="http://ssdtutorials.com/resources/content/images/tutorials/embed-google-maps/google-map.jpg" width="330">
+      <img src="http://placehold.it/330x150" width="330">
       <div class="card-content">
-        <b>Título</b>: The Office of Silicon Valley
-        <br>
-        <b>Calle</b>: 955 Benecia Avenue
-        <br>
-        <b>Colonia</b>: Tepepan
-        <br>
-        <b>Delegación</b>: Xochimilco
-        <br>
-        <b>Teléfono</b>: 55 1143 4964
+        <div>
+          <h2>Origen</h2>
+          <b>Título</b>:{{titulo-origen}}
+          <br>
+          <b>Calle</b>:{{calle-origen}} {{numero-origen}}
+          <br>
+          <b>Colonia</b>:{{colonia-origen}}
+          <br>
+          <b>Delegación</b>:{{delegacion-origen}}
+          <br>
+          <b>Teléfono</b>:{{telefono-origen}}
+        </div>
+        <div>
+          <h2>Destino</h2>
+          <b>Título</b>:{{titulo-destino}}
+          <br>
+          <b>Calle</b>:{{calle-destino}} {{numero-destino}}
+          <br>
+          <b>Colonia</b>:{{colonia-destino}}
+          <br>
+          <b>Delegación</b>:{{delegacion-destino}}
+          <br>
+          <b>Teléfono</b>:{{telefono-destino}}
+        </div>
       </div>
       <div class="card-actions">
-        <paper-button class="red">Cancelado</paper-button>
-        <paper-button class="green">Atendido</paper-button>
+        <paper-button class="red" on-tap="cancela">Cancelado</paper-button>
+        <paper-button class="green" on-tap="atiende">Atendido</paper-button>
       </div>
     </paper-card>
   </template>
