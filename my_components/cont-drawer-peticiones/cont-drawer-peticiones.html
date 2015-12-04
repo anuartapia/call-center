@@ -11,8 +11,8 @@
     </style>
     <!-- horizontal cards container -->
     <div class="contenido">
-      <paper-icon-button icon="cached"></paper-icon-button>
-      <div class="layout horizontal">
+      <paper-icon-button icon="cached" on-tap='actualizaPeticiones'></paper-icon-button>
+      <div id='contenedorPeticiones'>
         <!-- Mensaje temporal -->
         <template is='dom-if' if='{{!peticiones.length}}'>
           <paper-material>
@@ -20,11 +20,14 @@
           </paper-material>
         </template>
         <!-- Iterador sobre las peticiones -->
-        <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
-          <div class="flex">
-            <cont-peticion></cont-peticion>
-          </div>
-        </template>
+        <div class="layout horizontal">
+          <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
+            <div class="flex">
+              <paper-item>{{item.cliente}}</paper-item>
+              <cont-peticion></cont-peticion>
+            </div>
+          </template>
+        </div>
       </div>
     </div>
   </template>
