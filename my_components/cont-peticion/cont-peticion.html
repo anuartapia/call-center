@@ -10,6 +10,8 @@
     </style>
     <paper-card heading="{{cliente}}">
       <b>Teléfono</b>:{{telefono}}
+      <br>
+      <b>Fecha</b>:{{fecha}}
       <!-- <img src="http://placehold.it/330x150" width="330"> -->
       <img src="{{imagenMapa}}" width="330">
       <div class="card-content">
@@ -51,6 +53,10 @@
         type: Number,
         value: ""
       },
+      fecha: {
+        type: String,
+        value: new Date().toLocaleString()
+      },
       imagenMapa: {
         type: String,
         value: ""
@@ -87,15 +93,25 @@
         type: String,
         value: ""
       },
-    },
-    cancela: function (argument) {
-      if(argument){
-        this.fire('complete',this);
+      cancelada: {
+        type: Boolean,
+        value: false,
+        observer: 'cancela'
+      },
+      atendida: {
+        type: Boolean,
+        value: false,
+        observer: 'atiende'
       }
     },
-    atiende: function (argument) {
-      if(argument){
-        this.fire('complete',this);
+    cancela: function(argument) {
+      if (argument) {
+        this.fire('cancel', this);
+      }
+    },
+    atiende: function(argument) {
+      if (argument) {
+        this.fire('complete', this);
       }
     }
   });

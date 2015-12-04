@@ -13,15 +13,18 @@
     <div class="contenido">
       <paper-icon-button icon="cached"></paper-icon-button>
       <div class="layout horizontal">
-        <div class="flex">
-          <cont-peticion></cont-peticion>
-        </div>
-        <div class="flex">
-          <cont-peticion></cont-peticion>
-        </div>
-        <div class="flex">
-          <cont-peticion></cont-peticion>
-        </div>
+        <!-- Mensaje temporal -->
+        <template is='dom-if' if='{{!peticiones.length}}'>
+          <paper-material>
+            <paper-item>Aquí aparecerán las nuevas peticiones</paper-item>
+          </paper-material>
+        </template>
+        <!-- Iterador sobre las peticiones -->
+        <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
+          <div class="flex">
+            <cont-peticion></cont-peticion>
+          </div>
+        </template>
       </div>
     </div>
   </template>
