@@ -8,32 +8,26 @@
       display: block;
     }
     </style>
-    <paper-card heading="Jessica Zaide Jaime Aguilar">
-      <img src="http://placehold.it/330x150" width="330">
+    <paper-card heading="{{cliente}}">
+      <b>Teléfono</b>:{{telefono}}
+      <!-- <img src="http://placehold.it/330x150" width="330"> -->
+      <img src="{{imagenMapa}}" width="330">
       <div class="card-content">
         <div>
           <h2>Origen</h2>
-          <b>Título</b>:{{titulo-origen}}
+          <b>Calle y Número</b>:{{calleOrigen}} {{numeroOrigen}}
           <br>
-          <b>Calle</b>:{{calle-origen}} {{numero-origen}}
+          <b>Colonia</b>:{{coloniaOrigen}}
           <br>
-          <b>Colonia</b>:{{colonia-origen}}
-          <br>
-          <b>Delegación</b>:{{delegacion-origen}}
-          <br>
-          <b>Teléfono</b>:{{telefono-origen}}
+          <b>Delegación</b>:{{delegacionOrigen}}
         </div>
         <div>
           <h2>Destino</h2>
-          <b>Título</b>:{{titulo-destino}}
+          <b>Calle y Número</b>:{{calleDestino}} {{numeroDestino}}
           <br>
-          <b>Calle</b>:{{calle-destino}} {{numero-destino}}
+          <b>Colonia</b>:{{coloniaDestino}}
           <br>
-          <b>Colonia</b>:{{colonia-destino}}
-          <br>
-          <b>Delegación</b>:{{delegacion-destino}}
-          <br>
-          <b>Teléfono</b>:{{telefono-destino}}
+          <b>Delegación</b>:{{delegacionDestino}}
         </div>
       </div>
       <div class="card-actions">
@@ -47,6 +41,52 @@
     is: "cont-peticion",
     ready: function() {
       console.log("cont-peticion ready!");
+    },
+    properties: {
+      cliente: {
+        type: String,
+        value: ""
+      },
+      telefono: {
+        type: Number,
+        value: ""
+      },
+      imagenMapa: {
+        type: String,
+        value: ""
+      },
+      calleOrigen: {
+        type: String,
+        value: ""
+      },
+      numeroOrigen: {
+        type: String,
+        value: ""
+      },
+      coloniaOrigen: {
+        type: String,
+        value: ""
+      },
+      delegacionOrigen: {
+        type: String,
+        value: ""
+      },
+      calleDestino: {
+        type: String,
+        value: ""
+      },
+      numeroDestino: {
+        type: String,
+        value: ""
+      },
+      coloniaDestino: {
+        type: String,
+        value: ""
+      },
+      delegacionDestino: {
+        type: String,
+        value: ""
+      },
     }
   });
   </script>
