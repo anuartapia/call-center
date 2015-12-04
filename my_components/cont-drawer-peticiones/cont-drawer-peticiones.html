@@ -15,7 +15,7 @@
                 <!-- Mensaje temporal -->
                 <template is='dom-if' if='{{!peticiones.length}}'>
                     <paper-material>
-                        <paper-item>Aquí aparecerán las nuevas peticiones</paper-item>
+                        <paper-item class="aviso">Aquí aparecerán las nuevas peticiones</paper-item>
                     </paper-material>
                 </template>
                 <!-- Iterador sobre las peticiones -->
@@ -37,6 +37,12 @@
         ready: function() {
             console.log("cont-drawer-peticiones ready!");
         },
+        properties: {
+          peticiones:{
+            type: Array,
+            value: []
+          }
+        },
         actualizaPeticiones: function(e) {
             console.log("act");
             var datalist = 'nuevas=1';
@@ -44,24 +50,10 @@
             this.$.ajax.body = datalist;
             this.$.ajax.generateRequest();
         },
-        despliegaPeticiones: function(r){
-          console.log(r.detail.response);
-          console.log(r.detail.response.cliente);
-        },
-        tryLogin: function(e) {
-            var datalist = 'email=' + encodeURIComponent(this.email) +
-                '&password=' + encodeURIComponent(this.password);
-            console.log(datalist);
-            this.$.ajax.body = datalist;
-            this.$.ajax.generateRequest();
-        },
-        loginResponse: function(r) {
+        despliegaPeticiones: function(r) {
             console.log(r.detail.response);
-            if (r.detail.response.success == 1) {
-                console.log("login exitoso");
-            } else {
-                console.log("login inválido");
-            }
+            console.log(r.detail.response.cliente);
+            this.peticiones.push(r);
         }
     });
     </script>
