@@ -8,7 +8,9 @@
       display: block;
     }
     </style>
+    <h2>{{cliente}}</h2>
     <paper-card heading="{{cliente}}">
+      {{cliente}} hola2
       <b>Teléfono</b>:{{telefono}}
       <br>
       <b>Fecha</b>:{{fecha}}
@@ -50,12 +52,12 @@
         value: ""
       },
       telefono: {
-        type: Number,
+        type: String,
         value: ""
       },
       fecha: {
         type: String,
-        value: new Date().toLocaleString()
+        value: ""
       },
       imagenMapa: {
         type: String,

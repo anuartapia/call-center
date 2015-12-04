@@ -22,7 +22,8 @@
                 <div class="layout horizontal">
                     <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
                         <div class="flex">
-                            <cont-peticion cliente="{{item.cliente}}" telefono="{{item.telefono}}" fecha="{{item.fecha}}" imagenMapa="{{item.imagenMapa}}" calleOrigen="{{item.calleOrigen}}" numeroOrigen="{{item.numeroOrigen}}" coloniaOrigen="{{item.coloniaOrigen}}" delegacionOrigen="{{item.delegacionOrigen}}" calleDestino="{{item.calleDestino}}" numeroDestino="{{item.numeroDestino}}" coloniaDestino="{{item.coloniaDestino}}" delegacionDestino="{{item.delegacionDestino}}"></cont-peticion>
+                            <!-- <cont-peticion cliente="{{item.cliente}}" telefono="{{item.telefono}}" fecha="{{item.fecha}}" imagenMapa="{{item.imagenMapa}}" calleOrigen="{{item.calleOrigen}}" numeroOrigen="{{item.numeroOrigen}}" coloniaOrigen="{{item.coloniaOrigen}}" delegacionOrigen="{{item.delegacionOrigen}}" calleDestino="{{item.calleDestino}}" numeroDestino="{{item.numeroDestino}}" coloniaDestino="{{item.coloniaDestino}}" delegacionDestino="{{item.delegacionDestino}}"></cont-peticion> -->
+                            <cont-peticion fecha="1234"  cliente="juean" ></cont-peticion>
                         </div>
                     </template>
                 </div>
@@ -59,6 +60,17 @@
             console.log(this.peticiones);
             for (var i = this.peticiones.length - 1; i >= 0; i--) {
               console.log(this.peticiones[i].cliente);
+              console.log(this.peticiones[i].telefono);
+              console.log(this.peticiones[i].fecha);
+              console.log(this.peticiones[i].imagenMapa);
+              console.log(this.peticiones[i].calleOrigen);
+              console.log(this.peticiones[i].numeroOrigen);
+              console.log(this.peticiones[i].coloniaOrigen);
+              console.log(this.peticiones[i].delegacionOrigen);
+              console.log(this.peticiones[i].calleDestino);
+              console.log(this.peticiones[i].numeroDestino);
+              console.log(this.peticiones[i].coloniaDestino);
+              console.log(this.peticiones[i].delegacionDestino);
             };
         }
     });

@@ -2,7 +2,7 @@
 date_default_timezone_set("America/Mexico_City");
 $p1 = array(
       "cliente" => "Jessi Jaime",
-      "telefono" => 0123456789,
+      "telefono" => "0123456789",
       "fecha" => date('ymd'),
       "imagenMapa" => "https://cbtelevision.com.mx/wp-content/uploads/2015/06/619.jpg",
       "calleOrigen" => "16 de Septiembre",
@@ -18,7 +18,7 @@ $p1 = array(
       );
 $p2 = array(
       "cliente" => "Zaide Aguilar",
-      "telefono" => 9876543210,
+      "telefono" => "9876543210",
       "fecha" => date('ymd'),
       "imagenMapa" => "https://cbtelevision.com.mx/wp-content/uploads/2015/06/619.jpg",
       "calleOrigen" => "Grimmauld Place",
