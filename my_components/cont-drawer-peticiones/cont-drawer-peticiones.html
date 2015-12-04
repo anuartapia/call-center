@@ -22,7 +22,7 @@
                 <div class="layout horizontal">
                     <template id='peticiones' is='dom-repeat' items='{{peticiones}}'>
                         <div class="flex">
-                            <cont-peticion cliente="item.cliente" telefono="item.telefono" fecha="item.fecha" imagenMapa="item.imagenMapa" calleOrigen="item.calleOrigen" numeroOrigen="item.numeroOrigen" coloniaOrigen="item.coloniaOrigen" delegacionOrigen="item.delegacionOrigen" calleDestino="item.calleDestino" numeroDestino="item.numeroDestino" coloniaDestino="item.coloniaDestino" delegacionDestino="item.delegacionDestino"></cont-peticion>
+                            <cont-peticion cliente="{{item.cliente}}" telefono="{{item.telefono}}" fecha="{{item.fecha}}" imagenMapa="{{item.imagenMapa}}" calleOrigen="{{item.calleOrigen}}" numeroOrigen="{{item.numeroOrigen}}" coloniaOrigen="{{item.coloniaOrigen}}" delegacionOrigen="{{item.delegacionOrigen}}" calleDestino="{{item.calleDestino}}" numeroDestino="{{item.numeroDestino}}" coloniaDestino="{{item.coloniaDestino}}" delegacionDestino="{{item.delegacionDestino}}"></cont-peticion>
                         </div>
                     </template>
                 </div>
@@ -50,8 +50,16 @@
             this.$.ajax.generateRequest();
         },
         despliegaPeticiones: function(r) {
-            console.log(r.detail.response);
-            this.peticiones.push(r);
+            this.peticiones = [];
+            console.log(r.detail.response.peticiones);
+            var pets = r.detail.response.peticiones;
+            for (var i = pets.length - 1; i >= 0; i--) {
+              this.peticiones.push(pets[i]);
+            };
+            console.log(this.peticiones);
+            for (var i = this.peticiones.length - 1; i >= 0; i--) {
+              console.log(this.peticiones[i].cliente);
+            };
         }
     });
     </script>
